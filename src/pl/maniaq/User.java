@@ -1,6 +1,7 @@
 package pl.maniaq;
 
 public class User {
+    public final static User DEFAULT_USER = new User("annonymous", "password");
     private String login;
     private String password;
 

@@ -30,6 +30,16 @@ public class UserService {
         throw new UserNotFoundException("User with login: " + login + " not found.");
     }
 
+    public User getUserByLoginReturnsDefaultObject (String login) {
+        for(User user : users) {
+            if (user.getLogin().equals(login)) {
+                return user;
+            }
+        }
+
+        return User.DEFAULT_USER;
+    }
+
     public Optional<User> getUserByLoginReturnsOptional(String login) {
         for(User user : users) {
             if (user.getLogin().equals(login)) {
